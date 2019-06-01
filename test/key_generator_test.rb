@@ -21,7 +21,8 @@ class KeyGeneratorTest < Minitest::Test
   end
 
   def test_it_generates_a_date_in_ddmmyy_format
-    skip
-    #use a stub here?
+    @key_gen.stub :generate_date, "060519" do
+      assert_equal "060519", @key_gen.generate_date
+    end
   end
 end
