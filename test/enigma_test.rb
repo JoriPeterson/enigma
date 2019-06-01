@@ -2,6 +2,9 @@ require './test/test_helper'
 require 'minitest/autorun'
 require 'minitest/pride'
 require './lib/enigma'
+require './lib/key_generator.rb'
+require './lib/offsets'
+require './lib/shift'
 require 'pry'
 
 class EnigmaTest < Minitest::Test
@@ -82,5 +85,5 @@ class EnigmaTest < Minitest::Test
     actual = @enigma.encrypt("hello world", "02715", "040895")
 
     assert_equal expected, actual
-  end    
+  end
 end
