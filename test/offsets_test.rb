@@ -8,8 +8,19 @@ require 'pry'
 
 class OffsetsTest < Minitest::Test
 
+  def setup
+    @offset = Offsets.new
+    @key_1 = KeyGenerator.new
+  end
+
   def test_it_exists
-    offset = Offsets.new
-    assert_instance_of Offsets, offset
+    assert_instance_of Offsets, @offset
+  end
+
+  def test_it_creates_offsets
+    key = @key_1.generate_key
+    date = @key_1.generate_date
+
+    @offset.create_new_key(key, date)
   end
 end
