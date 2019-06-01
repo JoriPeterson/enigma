@@ -10,18 +10,17 @@ class Offsets
     @d_key = key[3..4]
   end
 
-# With the date:
-# Takes today's date, squares it, and takes the last 4 digits
-
   def date_squared
     squared = @date.to_i * @date.to_i
     squared.to_s[-4..-1]
   end
 
-# For the offsets:
-# Takes A's assigned number and adds by index 0
-# Takes B's assigned number and adds by index 1
-# Takes C's assigned number and adds by index 2
-# Takes D's assigned number and adds by index 3
+  def create_offsets
+    new_a = @a_key.to_i + date_squared[0].to_i
+    new_b = @b_key.to_i + date_squared[1].to_i
+    new_c = @c_key.to_i + date_squared[2].to_i
+    new_d = @d_key.to_i + date_squared[3].to_i
+    offsets = [new_a, new_b, new_c, new_d]
+  end
 
 end
