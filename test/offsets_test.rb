@@ -9,7 +9,7 @@ require 'pry'
 class OffsetsTest < Minitest::Test
 
   def setup
-    @key_1 = KeyGenerator.new
+    # @key_1 = KeyGenerator.new
     # key = @key_1.generate_key
     # date = @key_1.generate_date
     key = "01234"
@@ -26,10 +26,11 @@ class OffsetsTest < Minitest::Test
     assert_equal "010619", @offset.date
   end
 
-  # def test_it_creates_offsets
-  #   key = @key_1.generate_key
-  #   date = @key_1.generate_date
-  #
-  #   @offset.create_new_key(key, date)
-  # end
+  def test_date_squared_method_returns_last_four_digits
+    assert_equal "3161", @offset.date_squared
+  end
+
+  def test_new_offsets
+    assert_equal "3161", @offset.create_offsets
+  end
 end
