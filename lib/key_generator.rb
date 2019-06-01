@@ -7,6 +7,7 @@ class KeyGenerator
   end
 
   def generate_date
-  
+    date = Date.today
+    date.strftime("%d%m%y")
   end
 end
