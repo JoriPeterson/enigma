@@ -31,6 +31,7 @@ class OffsetsTest < Minitest::Test
   end
 
   def test_new_offsets
-    assert_equal "3161", @offset.create_offsets
+    skip
+    assert_equal "4, 13, 29, 35", @offset.create_offsets
   end
 end
