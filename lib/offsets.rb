@@ -1,6 +1,7 @@
 class Offsets
+  attr_reader :key, :date
 
-  def initialize(key)
+  def initialize(key, date)
     @key = key
     @date = date
     @a_key = key[0,1]
