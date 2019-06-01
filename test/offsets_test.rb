@@ -10,10 +10,10 @@ class OffsetsTest < Minitest::Test
 
   def setup
     @key_1 = KeyGenerator.new
-
-    key = @key_1.generate_key
-    date = @key_1.generate_date
-
+    # key = @key_1.generate_key
+    # date = @key_1.generate_date
+    key = "01234"
+    date = "010619"
     @offset = Offsets.new(key, date)
   end
 
@@ -22,8 +22,8 @@ class OffsetsTest < Minitest::Test
   end
 
   def test_it_has_attributes
-    assert_equal 01234, @offset.key
-    assert_equal "060519", @offset.date
+    assert_equal "01234", @offset.key
+    assert_equal "010619", @offset.date
   end
 
   # def test_it_creates_offsets
