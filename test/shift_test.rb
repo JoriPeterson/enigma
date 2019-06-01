@@ -11,4 +11,6 @@ class ShiftTest < Minitest::Test
     shift = Shift.new
     assert_instance_of Shift, shift
   end
+
+   
 end
