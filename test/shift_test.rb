@@ -9,7 +9,7 @@ require 'pry'
 class ShiftTest < Minitest::Test
 
   def setup
-    message = "Hello world"
+    message = "hello world"
     offsets = [4, 13, 29, 35]
     @shift = Shift.new(message, offsets)
   end
@@ -19,7 +19,7 @@ class ShiftTest < Minitest::Test
   end
 
   def test_it_has_attributes
-    assert_equal "Hello world", @shift.message
+    assert_equal "hello world", @shift.message
     assert_equal [4, 13, 29, 35], @shift.offsets
   end
 
@@ -27,9 +27,12 @@ class ShiftTest < Minitest::Test
     assert_equal 27, @shift.character_map.count
   end
 
+  def test_can_find_index_of_character_on_map
+    assert_equal 1, @shift.find_index_of_character("b")
+  end
+
   def test_it_rotates_as_directed_by_offsets
-    skip
-    assert_equal " ", @shift.encrypt("Hello world")
+    assert_equal " ", @shift.encrypt("hello world")
     # assert_equal " ", @shift.decrypt(message)
   end
 end
