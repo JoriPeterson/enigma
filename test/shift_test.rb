@@ -4,6 +4,7 @@ require 'minitest/pride'
 require './lib/enigma'
 require './lib/shift'
 require './lib/offsets'
+require './lib/key_generator'
 require 'pry'
 
 class ShiftTest < Minitest::Test
@@ -32,7 +33,7 @@ class ShiftTest < Minitest::Test
   end
 
   def test_it_rotates_as_directed_by_offsets
-    assert_equal " ", @shift.encrypt("hello world")
-    # assert_equal " ", @shift.decrypt(message)
+    assert_equal "lrnpab atpq", @shift.encrypt("hello world")
+    assert_equal "hello world", @shift.decrypt("lrnpab atpq")
   end
 end
