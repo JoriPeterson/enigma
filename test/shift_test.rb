@@ -33,7 +33,7 @@ class ShiftTest < Minitest::Test
   end
 
   def test_it_rotates_as_directed_by_offsets
-    assert_equal "lrnpab atpq", @shift.encrypt("hello world")
-    assert_equal "hello world", @shift.decrypt("lrnpab atpq")
+    assert_equal "lrntsmywvyf", @shift.encrypt("hello world")
+    assert_equal "hello world", @shift.decrypt("lrntsmywvyf")
   end
 end
