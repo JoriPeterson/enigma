@@ -10,9 +10,8 @@ require 'pry'
 class ShiftTest < Minitest::Test
 
   def setup
-    message = "hello world"
     offsets = [4, 13, 29, 35]
-    @shift = Shift.new(message, offsets)
+    @shift = Shift.new(offsets)
   end
 
   def test_it_exists
@@ -20,7 +19,6 @@ class ShiftTest < Minitest::Test
   end
 
   def test_it_has_attributes
-    assert_equal "hello world", @shift.message
     assert_equal [4, 13, 29, 35], @shift.offsets
   end
 
@@ -33,7 +31,7 @@ class ShiftTest < Minitest::Test
   end
 
   def test_it_rotates_as_directed_by_offsets
-    assert_equal "lrnpab atpq", @shift.encrypt("hello world")
-    assert_equal "hello world", @shift.decrypt("lrnpab atpq")
+    assert_equal "lrntsmywvyf", @shift.encrypt("hello world")
+    assert_equal "hello world", @shift.decrypt("lrntsmywvyf")
   end
 end
