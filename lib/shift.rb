@@ -13,26 +13,22 @@ class Shift
   def find_index_of_character(char)
     character_map.find_index(char)
   end
-  #
+  
   def encrypt(message)
     array = message.split(//)
-    array.each do |char|
-      #iterate over each letter in message
+    new_message = []
+    array.each_with_index do |char, message_index|
       index = find_index_of_character(char)
-      # binding.pry
-
-      #find index of character using character_map
-        if index % 3 == 0
-
-        # rotate by value of offset[0]
-        elsif index % 3 == 1
-        #
-        elsif index % 3 == 2
-        elsif index % 3 == 3
+        if message_index % 3 == 0
+          new_message << character_map.rotate(@offsets[0])[index]
+        elsif message_index % 3 == 1
+          new_message << character_map.rotate(@offsets[1])[index]
+        elsif message_index % 3 == 2
+          new_message << character_map.rotate(@offsets[2])[index]
+        elsif message_index % 3 == 3
+          new_message << character_map.rotate(@offsets[3])[index]
         end
-        binding.pry
     end
-
+    new_message.join
   end
-  # offsets = [4, 13, 29, 35]
 end
