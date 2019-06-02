@@ -1,7 +1,8 @@
 class Offsets
   attr_reader :key, :date
 
-  def initialize(key, date)
+  def initialize(key = KeyGenerator.new.generate_key,
+    date = KeyGenerator.new.generate_date)
     @key = key
     @date = date
     @a_key = key[0..1]
@@ -16,6 +17,7 @@ class Offsets
   end
 
   def create_offsets
+    # which enumerable does this??
     new_a = @a_key.to_i + date_squared[0].to_i
     new_b = @b_key.to_i + date_squared[1].to_i
     new_c = @c_key.to_i + date_squared[2].to_i

@@ -9,9 +9,6 @@ require 'pry'
 class OffsetsTest < Minitest::Test
 
   def setup
-    # @key_1 = KeyGenerator.new
-    # key = @key_1.generate_key
-    # date = @key_1.generate_date
     key = "01234"
     date = "010619"
     @offset = Offsets.new(key, date)
@@ -32,5 +29,11 @@ class OffsetsTest < Minitest::Test
 
   def test_new_offsets
     assert_equal [4, 13, 29, 35], @offset.create_offsets
+  end
+
+  def test_optional_parameters
+    offset_2 = Offsets.new
+    assert_equal 5, offset_2.key.size
+    assert_equal 6, offset_2.date.size
   end
 end
