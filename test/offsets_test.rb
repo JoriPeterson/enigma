@@ -11,29 +11,29 @@ class OffsetsTest < Minitest::Test
   def setup
     key = "01234"
     date = "010619"
-    @offset = Offsets.new(key, date)
+    @offsets = Offsets.new(key, date)
   end
 
   def test_it_exists
-    assert_instance_of Offsets, @offset
+    assert_instance_of Offsets, @offsets
   end
 
   def test_it_has_attributes
-    assert_equal "01234", @offset.key
-    assert_equal "010619", @offset.date
+    assert_equal "01234", @offsets.key
+    assert_equal "010619", @offsets.date
   end
 
   def test_date_squared_method_returns_last_four_digits
-    assert_equal "3161", @offset.date_squared
+    assert_equal "3161", @offsets.date_squared
   end
 
   def test_new_offsets
-    assert_equal [4, 13, 29, 35], @offset.create_offsets
+    assert_equal [4, 13, 29, 35], @offsets.create_offsets
   end
 
   def test_optional_parameters
-    offset_2 = Offsets.new
-    assert_equal 5, offset_2.key.size
-    assert_equal 6, offset_2.date.size
+    offsets_2 = Offsets.new
+    assert_equal 5, offsets_2.key.size
+    assert_equal 6, offsets_2.date.size
   end
 end
