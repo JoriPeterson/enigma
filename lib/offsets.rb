@@ -17,7 +17,6 @@ class Offsets
   end
 
   def create_offsets
-    # which enumerable does this??
     new_a = @a_key.to_i + date_squared[0].to_i
     new_b = @b_key.to_i + date_squared[1].to_i
     new_c = @c_key.to_i + date_squared[2].to_i
