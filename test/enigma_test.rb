@@ -18,7 +18,7 @@ class EnigmaTest < Minitest::Test
   end
 
   def test_it_encrypts_messages_with_a_key_and_a_date
-    skip
+
     expected =  {
     encryption: "keder ohulw",
     key: "02715",
@@ -64,13 +64,11 @@ class EnigmaTest < Minitest::Test
   end
 
   def test_it_encrypts_with_generated_key_and_todays_date
-    skip
+
     expected =  {
-    encryption: "keder ohulw",
-    key: "02715",
-    date: "040895" }
+     }
     # change today's date to a stub!!
-    actual = @enigma.encrypt("hello world", "02715", "040895")
+    actual = @enigma.encrypt("hello world", "02715", "020619")
 
     assert_equal expected, actual
   end
