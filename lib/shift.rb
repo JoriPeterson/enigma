@@ -10,26 +10,29 @@ class Shift
     ("a".."z").to_a << " "
   end
 
-  # def find_index_of_character("b")
-  #   character_map.index("b")
-  # end
+  def find_index_of_character(char)
+    character_map.find_index(char)
+  end
   #
-  # def encrypt(message)
-  #   character_map
-  #   # binding.pry
-  #   (0..message.size).each do |index|
-  #     binding.pry
-  #     find_index_of_character(char)
-  #       if index % 3 == 0
-  #
-  #       # rotate by value of offset[0]
-  #       elsif index % 3 == 1
-  #       #
-  #       elsif index % 3 == 2
-  #       elsif index % 3 == 3
-  #       end
-  #   end
-  #   binding.pry
-  # end
+  def encrypt(message)
+    array = message.split(//)
+    array.each do |char|
+      #iterate over each letter in message
+      index = find_index_of_character(char)
+      # binding.pry
+
+      #find index of character using character_map
+        if index % 3 == 0
+
+        # rotate by value of offset[0]
+        elsif index % 3 == 1
+        #
+        elsif index % 3 == 2
+        elsif index % 3 == 3
+        end
+        binding.pry
+    end
+
+  end
   # offsets = [4, 13, 29, 35]
 end
