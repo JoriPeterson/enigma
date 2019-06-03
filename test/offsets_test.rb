@@ -3,7 +3,6 @@ require 'minitest/autorun'
 require 'minitest/pride'
 require './lib/key_generator'
 require './lib/offsets'
-require './lib/enigma'
 require 'pry'
 
 class OffsetsTest < Minitest::Test
