@@ -13,7 +13,7 @@ class Shift
     character_map.find_index(char)
   end
 
-  def encrypt(message)
+  def shift(message, move)
     array = message.split(//)
     new_message = []
     array.each_with_index do |char, message_index|
@@ -22,38 +22,24 @@ class Shift
         new_message << char
       else
         if message_index % 4 == 0
-          new_message << character_map.rotate(@offsets[0])[index]
+          new_message << character_map.rotate(move * @offsets[0])[index]
         elsif message_index % 4 == 1
-          new_message << character_map.rotate(@offsets[1])[index]
+          new_message << character_map.rotate(move * @offsets[1])[index]
         elsif message_index % 4 == 2
-          new_message << character_map.rotate(@offsets[2])[index]
+          new_message << character_map.rotate(move * @offsets[2])[index]
         elsif message_index % 4 == 3
-          new_message << character_map.rotate(@offsets[3])[index]
+          new_message << character_map.rotate(move * @offsets[3])[index]
         end
       end
     end
     new_message.join
   end
 
+  def encrypt(message)
+    shift(message, 1)
+  end
+
   def decrypt(message)
-    array = message.split(//)
-    new_message = []
-    array.each_with_index do |char, message_index|
-      index = find_index_of_character(char)
-      if index.nil?
-        new_message << char
-      else
-        if message_index % 4 == 0
-          new_message << character_map.rotate(-@offsets[0])[index]
-        elsif message_index % 4 == 1
-          new_message << character_map.rotate(-@offsets[1])[index]
-        elsif message_index % 4 == 2
-          new_message << character_map.rotate(-@offsets[2])[index]
-        elsif message_index % 4 == 3
-          new_message << character_map.rotate(-@offsets[3])[index]
-        end
-      end  
-    end
-    new_message.join
+    shift(message, -1)
   end
 end
