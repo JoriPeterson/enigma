@@ -1,10 +1,8 @@
 require './test/test_helper'
 require 'minitest/autorun'
 require 'minitest/pride'
-require './lib/enigma'
 require './lib/shift'
 require './lib/offsets'
-require './lib/key_generator'
 require 'pry'
 
 class ShiftTest < Minitest::Test
