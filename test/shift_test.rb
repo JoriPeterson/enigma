@@ -18,10 +18,6 @@ class ShiftTest < Minitest::Test
     assert_instance_of Shift, @shift
   end
 
-  def test_it_has_attributes
-    assert_equal [4, 13, 29, 35], @shift.offsets
-  end
-
   def test_character_map_returns_array_of_27_elements
     assert_equal 27, @shift.character_map.count
   end
