@@ -1,5 +1,4 @@
 class Shift
-  attr_reader :offsets
 
   def initialize(offsets = Offsets.new.create_offsets)
     @offsets = offsets
@@ -18,7 +17,7 @@ class Shift
     new_message = []
     array.each_with_index do |char, message_index|
       index = find_index_of_character(char)
-      if index.nil?
+      if !character_map.include?(char)
         new_message << char
       else
         (0..3).each do |num|
