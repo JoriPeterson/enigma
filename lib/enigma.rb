@@ -12,7 +12,8 @@ class Enigma
     }
   end
 
-  def decrypt (message, key = nil, date = nil)
+  def decrypt(message, key, date = KeyGenerator.new.generate_date)
+
     offsets = Offsets.new(key, date)
     shift = Shift.new(offsets.create_offsets)
 
