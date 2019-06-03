@@ -30,8 +30,12 @@ class ShiftTest < Minitest::Test
     assert_equal 1, @shift.find_index_of_character("b")
   end
 
+  def test_shift_method_rotates_characters
+    assert_equal "xruqrt!", @shift.shift("tesing!", 1)
+  end
+
   def test_it_rotates_as_directed_by_offsets
-    assert_equal "lrntsmywvyf", @shift.encrypt("hello world")
-    assert_equal "hello world", @shift.decrypt("lrntsmywvyf")
+    assert_equal "lrntsmywvyf!", @shift.encrypt("hello world!")
+    assert_equal "hello world!", @shift.decrypt("lrntsmywvyf!")
   end
 end
