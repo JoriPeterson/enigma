@@ -40,6 +40,9 @@ class Shift
     new_message = []
     array.each_with_index do |char, message_index|
       index = find_index_of_character(char)
+      if index.nil?
+        new_message << char
+      else
         if message_index % 4 == 0
           new_message << character_map.rotate(-@offsets[0])[index]
         elsif message_index % 4 == 1
@@ -49,6 +52,7 @@ class Shift
         elsif message_index % 4 == 3
           new_message << character_map.rotate(-@offsets[3])[index]
         end
+      end  
     end
     new_message.join
   end
