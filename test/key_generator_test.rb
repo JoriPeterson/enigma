@@ -18,9 +18,7 @@ class KeyGeneratorTest < Minitest::Test
     assert_equal 5, @key_gen.generate_key.size
   end
 
-  def test_it_generates_a_date_in_ddmmyy_format
-    @key_gen.stub :generate_date, "050619" do
-      assert_equal "050619", @key_gen.generate_date
-    end
+  def test_it_generates_a_date_in_6_digits
+      assert_equal 6, @key_gen.generate_date.size
   end
 end
