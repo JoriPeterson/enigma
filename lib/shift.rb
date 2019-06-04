@@ -1,6 +1,6 @@
 class Shift
 
-  def initialize(offsets = Offsets.new.create_offsets)
+  def initialize(offsets)
     @offsets = offsets
   end
 
