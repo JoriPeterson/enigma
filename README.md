@@ -1,11 +1,13 @@
 Enigma - Evaluation
 
 - Functionality:
+
   Meets expectations:
   - Enigma Class with encrypt and decrypt methods successfully implemented.
   - Encrypt/decrypt command line interfaces successfully implemented.
 
 - Object Oriented Programming:
+
   Meets expectations:
   - Project is broken into logical components consisting of at least 4 classes that have single responsibilities.
   - Only one method is more than 7 lines (technically 8?).
@@ -14,7 +16,8 @@ Enigma - Evaluation
   - No class is longer than 80 lines.
   - Variable and method names always clearly communicate purpose.
 
-- Test Driven Development
+- Test Driven Development:
+
   Meets expectations:
   - Every method is tested at both the unit and integration level.
   - git history demonstrates students are writing tests before implementation code.
@@ -25,6 +28,7 @@ Enigma - Evaluation
   - Test coverage metrics show 100% coverage.
 
 - Version Control:
+
   Meets expectations:
   - No more than 3 commits include multiple pieces of functionality.
 
