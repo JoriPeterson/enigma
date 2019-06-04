@@ -18,7 +18,6 @@ class OffsetsTest < Minitest::Test
   end
 
   def test_it_has_attributes
-    assert_equal "01234", @offsets.key
     assert_equal "010619", @offsets.date
   end
 
