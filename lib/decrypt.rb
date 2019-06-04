@@ -14,4 +14,4 @@ file = File.open(decrypted, 'w')
 hash = enigma.decrypt(encrypt_file, key, date)
 file.puts hash[:decryption]
 
-p "Created '#{decryption}' with the key #{hash[:key]} and date #{hash[:date]}"
+p "Created '#{decrypted}' with the key #{hash[:key]} and date #{hash[:date]}"
