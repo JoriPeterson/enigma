@@ -1,5 +1,5 @@
 class Offsets
-  attr_reader :key, :date
+  attr_reader :date
 
   def initialize(key, date)
     key = key
