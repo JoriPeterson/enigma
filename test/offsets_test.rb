@@ -27,12 +27,6 @@ class OffsetsTest < Minitest::Test
   end
 
   def test_new_offsets
-    assert_equal [4, 13, 29, 35], @offsets.create_offsets
-  end
-
-  def test_optional_parameters
-    offsets_2 = Offsets.new
-    assert_equal 5, offsets_2.key.size
-    assert_equal 6, offsets_2.date.size
+    assert_equal [4, 13, 29, 35], @offsets.create_offsets("3161")
   end
 end
