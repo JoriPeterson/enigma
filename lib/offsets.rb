@@ -22,5 +22,4 @@ class Offsets
     new_d = @d_key.to_i + date_squared[3].to_i
     [new_a, new_b, new_c, new_d]
   end
-
 end

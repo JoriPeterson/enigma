@@ -24,7 +24,11 @@ class ShiftTest < Minitest::Test
     assert_equal 1, @shift.find_index_of_character("b")
   end
 
-  def test_shift_method_rotates_characters
+  def test_it_returns_a_new_character
+    assert_equal "l", @shift.get_new_character("h", 0, 1)
+  end
+
+  def test_shift_method_joins_new_characters_in_string
     assert_equal "xruqrt!", @shift.shift("tesing!", 1)
   end
 
